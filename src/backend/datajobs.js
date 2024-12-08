@@ -9,12 +9,20 @@ const data =  [{
     massage: `perbaikan telah selesai segera di ambil`,
     kasus: "perbaikan laptop",
     status: "done"
-  }, {
+  }, 
+  {
     number: 89650120007,
     massage: `ada masalah segera datang ke toko`,
     kasus: "perbaikan printer",
     status: "problem"
-  },]
+  },
+  {
+    number: 82336537481,
+    massage: `ada masalah segera datang ke toko`,
+    kasus: "perbaikan printer",
+    status: "problem"
+  },
+]
 app.use(
   cors({
     origin: '*', // Allow all origins; adjust as needed for security
