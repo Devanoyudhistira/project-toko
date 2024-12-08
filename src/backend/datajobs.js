@@ -14,37 +14,7 @@ const data =  [{
     massage: `ada masalah segera datang ke toko`,
     kasus: "perbaikan printer",
     status: "problem"
-  },
-  {
-    number: 83183602751,
-    massage: `perbaikan telah selesai segera di ambil`,
-    kasus: "install ulang",
-    status: "done"
-  },
-  {
-    number: 83183602751,
-    massage: `perbaikan telah selesai segera di ambil`,
-    kasus: "install ulang",
-    status: "done"
-  },
-  {
-    number: 83183602751,
-    massage: `perbaikan telah selesai segera di ambil`,
-    kasus: "install ulang",
-    status: "done"
-  },
-  {
-    number: 83183602751,
-    massage: `perbaikan telah selesai segera di ambil`,
-    kasus: "install ulang",
-    status: "pending"
-  },
-  {
-    number: 83182602751,
-    massage: `perbaikan telah selesai segera di ambil`,
-    kasus: "perbaikan layar laptop",
-    status: "pending"
-  }]
+  },]
 app.use(
   cors({
     origin: '*', // Allow all origins; adjust as needed for security
