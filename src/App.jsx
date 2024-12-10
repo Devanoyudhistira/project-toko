@@ -84,7 +84,7 @@ function App() {
           </button>
         </div>)}
       {isshowform && 
-      <form action="" className="bg-white px-2 py-3 shadow-[4px_4px_10px_black] top-[80px] left-[120px] w-[55vw] h-max flex flex-col absolute" onSubmit={(e) => {
+      <form action="" className="bg-white px-2 py-3 shadow-[4px_4px_10px_black] top-[190px] left-[79px] w-[55vw] h-max flex flex-col absolute" onSubmit={(e) => {
         e.preventDefault();
         setmassagedata((prevData) => [
           ...prevData,
@@ -109,8 +109,8 @@ function App() {
         </label>
         <button type="submit" className=" justify-self-end border mt-3 bg-blue-400/40 border-black shadow-[2px_2px_0_black]" >tambah</button>
       </form>}
-      <footer className="border-t-2 border-black w-screen h-16" >
-        <button className="ml-3 mt-3 inline-block rounded-full p-2 border-2 border-black" onClick={() => setisshowform(!isshowform)}>  <Plus className="text-xl" />  </button>
+      <footer className="border-t-2 border-black w-screen bg-red-500 fixed bottom-0 px-2 py-1 h-max" >
+        <button className=" inline-block rounded-full p-2 border-2 border-black" onClick={() => setisshowform(!isshowform)}>  <Plus className="text-xl" />  </button>
       </footer>
     </main>
   )
