@@ -69,7 +69,7 @@ function App() {
 
   }
   return (
-    <main className="flex relative w-screen h-max pb-6 flex-col mt-2 items-center gap-y-3 justify-between flex-wrap " >
+    <main className="flex relative w-screen h-max pb-16 flex-col mt-2 items-center gap-y-3 justify-between flex-wrap " >
       {massagedata && massagedata.map((e, i) =>
         <div key={e.number} className={`border-4 relative ${statuscolor(e.status)} px-2 py-1 gap-y-2 flex flex-col justify-between w-[80vw] h-max rounded-3xl shadow-[7px_7px_2px_black]`} >
           <h1 className="text-2xl font-bold" >{e.kasus}</h1>
@@ -110,7 +110,7 @@ function App() {
         </label>
         <button type="submit" className=" justify-self-end border mt-3 bg-blue-400/40 border-black shadow-[2px_2px_0_black]" >tambah</button>
       </form>}
-      <footer className="border-t-2 border-black w-screen fixed bottom-0 px-2 py-1 h-max" >
+      <footer className="border-t-2 bg-white z-100 border-black w-screen fixed bottom-0 px-2 py-1 h-max" >
         <button className=" inline-block rounded-full p-2 border-2 border-black" onClick={() => setisshowform(!isshowform)}>  <Plus className="text-xl" />  </button>
       </footer>
     </main>
