@@ -1,11 +1,14 @@
 import { useRef } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import { X } from "react-bootstrap-icons";
+import { Plus } from "react-bootstrap-icons";
+import { Whatsapp } from "react-bootstrap-icons";
 
 function App() {
   const telephone = useRef()
   const kasusref = useRef()
-  const [isshowform,setisshowform] = useState(false)
+  const [isshowform, setisshowform] = useState(false)
   const [massagedata, setmassagedata] = useState([{
     number: 83845923336,
     massage: `perbaikan telah selesai segera di ambil`,
@@ -76,33 +79,38 @@ function App() {
             <button className={`${e.status === "problem" ? "bg-red-500 " : "border-red-500"} duration-200 w-24 px-2 py-1 text-xl border-2 border-red-500`} onClick={() => changestatus(i, "problem")} >problem</button>
             <button className={`${e.status === "done" ? "bg-green-500 " : "border-green-500"} duration-200 w-24 px-2 py-1 text-xl border-2 `} onClick={() => changestatus(i, "done")} > done </button>
           </div>
-          <button className={`w-max h-max self-center inline-block px-2 py-1 border-4 rounded-full font-bold ${statuscolor(e.status)}`} onClick={() => sendtext(e.number, e.status, e.kasus)} >send massage</button>
+          <button className={`w-max h-max self-center flex items-center gap-2 justify-between bg-green-500 px-2 py-1 border-4 rounded-full font-bold `} onClick={() => sendtext(e.number, e.status, e.kasus)}> <Whatsapp />
+            <span className="-mt-1 font-medium text-xl tracking-wider" > send massage </span>
+          </button>
         </div>)}
-      {isshowform && <form action="" className="bg-white shadow-[4px_4px_10px_black] top-[80px] left-[200px] w-[40vw] h-[300px] flex flex-col absolute" onSubmit={(e) => {
-          e.preventDefault();
-          setmassagedata((prevData) => [
-            ...prevData,
-            {
-              number: telephone.current.value,
-              massage: "perbaikan sedang dikerjakan",
-              kasus: kasusref.current.value,
-              status: "pending",
-              image: "",
-            },
-          ]);
-        }} >
-        <label htmlFor="nama-kasus">
+      {isshowform && 
+      <form action="" className="bg-white px-2 py-3 shadow-[4px_4px_10px_black] top-[80px] left-[120px] w-[55vw] h-max flex flex-col absolute" onSubmit={(e) => {
+        e.preventDefault();
+        setmassagedata((prevData) => [
+          ...prevData,
+          {
+            number: telephone.current.value,
+            massage: "perbaikan sedang dikerjakan",
+            kasus: kasusref.current.value,
+            status: "pending",
+            image: "",
+          },
+        ]);
+      }} >
+       <button onClick={() => setisshowform(false)} className="absolute right-2 top-1 p-1 rounded-full border-2 border-red-600" > <X className=" text-xl" /> </button>
+        <h1 className="text-2xl font-bold tracking-wide mt-2" > tambah kasus </h1>
+        <label htmlFor="nama-kasus" className="flex flex-col"  >
           kasus
-          <input type="text" ref={kasusref} name="kasus" id="nama-kasus" />
+          <input className="outline-none border-2  border-black px-2" type="text" ref={kasusref} name="kasus" id="nama-kasus" />
         </label>
-        <label htmlFor="phone-number">
+        <label htmlFor="phone-number" className="flex flex-col">
           no telpon
-          <input type="number" ref={telephone} name="kasus" id="phone=number" />
+          <input className="outline-none border-2 border-black px-2" type="number" ref={telephone} name="kasus" id="phone=number" />
         </label>
-        <button type="submit">tambah</button>
+        <button type="submit" className=" justify-self-end border mt-3 bg-blue-400/40 border-black shadow-[2px_2px_0_black]" >tambah</button>
       </form>}
-      <footer className="border-t-2 border-black w-screen h-24" >
-        <button onClick={() => setisshowform(!isshowform)} ><span>tambah data</span></button>
+      <footer className="border-t-2 border-black w-screen h-16" >
+        <button className="ml-3 mt-3 inline-block rounded-full p-2 border-2 border-black" onClick={() => setisshowform(!isshowform)}>  <Plus className="text-xl" />  </button>
       </footer>
     </main>
   )
