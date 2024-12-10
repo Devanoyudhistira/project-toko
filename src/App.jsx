@@ -83,33 +83,36 @@ function App() {
             <span className="-mt-1 font-medium text-xl tracking-wider" > send massage </span>
           </button>
         </div>)}
-      {isshowform && 
-      <form action="" className="bg-white px-2 py-3 shadow-[4px_4px_10px_black] top-[190px] left-[79px] w-[55vw] h-max flex flex-col absolute" onSubmit={(e) => {
-        e.preventDefault();
-        setisshowform(false)
-        setmassagedata((prevData) => [
-          ...prevData,
-          {
-            number: telephone.current.value,
-            massage: "perbaikan sedang dikerjakan",
-            kasus: kasusref.current.value,
-            status: "pending",
-            image: "",
-          },
-        ]);
-      }} >
-       <button onClick={() => setisshowform(false)} className="absolute right-2 top-1 p-1 rounded-full border-2 border-red-600" > <X className=" text-xl" /> </button>
-        <h1 className="text-2xl font-bold tracking-wide mt-2" > tambah kasus </h1>
-        <label htmlFor="nama-kasus" className="flex flex-col"  >
-          kasus
-          <input className="outline-none border-2  border-black px-2" type="text" ref={kasusref} name="kasus" id="nama-kasus" />
-        </label>
-        <label htmlFor="phone-number" className="flex flex-col">
-          no telpon
-          <input className="outline-none border-2 border-black px-2" type="number" ref={telephone} name="kasus" id="phone=number" />
-        </label>
-        <button type="submit" className=" justify-self-end border mt-3 bg-blue-400/40 border-black shadow-[2px_2px_0_black]" >tambah</button>
-      </form>}
+      {isshowform &&
+        <form action="" className="bg-white px-2 py-3 shadow-[4px_4px_10px_black] top-[190px] left-[79px] w-[55vw] h-max flex flex-col absolute" onSubmit={(e) => {
+          e.preventDefault();
+          setisshowform(false)
+          setmassagedata((prevData) => [
+            ...prevData,
+            {
+              number: telephone.current.value,
+              massage: "perbaikan sedang dikerjakan",
+              kasus: kasusref.current.value,
+              status: "pending",
+              image: "",
+            },
+          ]);
+        }} >
+          <button onClick={() => setisshowform(false)} className="absolute right-2 top-1 p-1 rounded-full border-2 border-red-600" > <X className=" text-xl" /> </button>
+          <h1 className="text-2xl font-bold tracking-wide mt-2" > tambah kasus </h1>
+          <label htmlFor="nama-kasus" className="flex flex-col"  >
+            kasus
+            <input className="outline-none border-2  border-black px-2" type="text" ref={kasusref} name="kasus" id="nama-kasus" />
+          </label>
+          <label htmlFor="phone-number" className="flex flex-col">
+            no telpon
+            <div className="flex " >
+              <span className="p-1 -mr-1 rounded-tl-full rounded-bl-full border-2 border-black" >+62</span>
+              <input className="outline-none border-2 border-black px-2" type="number" ref={telephone} name="kasus" id="phone=number" />
+            </div>
+          </label>
+          <button type="submit" className=" justify-self-end border mt-3 bg-blue-400/40 border-black shadow-[2px_2px_0_black]" >tambah</button>
+        </form>}
       <footer className="border-t-2 bg-white z-100 border-black w-screen fixed bottom-0 px-2 py-1 h-max" >
         <button className=" inline-block rounded-full p-2 border-2 border-black" onClick={() => setisshowform(!isshowform)}>  <Plus className="text-xl" />  </button>
       </footer>
