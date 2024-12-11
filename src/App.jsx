@@ -84,7 +84,7 @@ function App() {
           </button>
         </div>)}
       {isshowform &&
-        <form action="" className="bg-white px-2 py-3 shadow-[4px_4px_10px_black] top-[190px] left-[79px] w-[55vw] h-max flex flex-col absolute" onSubmit={(e) => {
+        <form action="" className="bg-white  px-2 py-3 shadow-[4px_4px_10px_black] top-[190px] left-[79px] w-[65vw] h-max flex flex-col absolute" onSubmit={(e) => {
           e.preventDefault();
           setisshowform(false)
           setmassagedata((prevData) => [
